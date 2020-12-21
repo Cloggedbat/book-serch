@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node book-serch/server/server.js",
+    "start": "react-scripts start",
     "start:server": "nodemon server/server.js",
     "start:client": "cd client && yarn start",
     "dev": "concurrently \"yarn run start:server\" \"yarn run start:client\"",
