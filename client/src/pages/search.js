@@ -1,5 +1,6 @@
-import React from 'react';
-import Display from '../components/display'
+import React from "react";
+import Form from "../components/Form";
+import Results from "../components/Results";
 import API from "../utils/api";
 
 
@@ -46,14 +47,14 @@ class Search extends React.Component {
     render() {
         return (
             <div>
-                <Display
+                <Form
                     search={this.state.search}
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
                 <div className="container">
                     <h2>Results</h2>
-
+                    <Results books={this.state.books} />
                 </div>
             </div>
         )
