@@ -1,6 +1,6 @@
 import React from 'react';
 import Display from '../components/display'
-import API from "../Utils/api";
+import API from "../utils/api";
 
 
 class Search extends React.Component {
