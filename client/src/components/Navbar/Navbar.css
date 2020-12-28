@@ -1,24 +1,20 @@
-.Navbar {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid;
-  margin-bottom: 2rem;
-  padding: 1.2rem 0.8rem;
+nav {
+  background-color: purple
 }
 
-.Navbar-brand {
-  font-size: 2.4rem;
+a {
+  text-decoration: none;
+  color: white
+}
+a:hover {
+  text-decoration: underline;
+  color: white
 }
 
-.Navbar-links {
-  display: flex;
-  flex-grow: 1;
-  justify-content: flex-end;
-  list-style: none;
+.navbar-brand {
+  font-size: 35px;
 }
 
-.Navbar-link {
-  cursor: pointer;
-  font-size: 1.6rem;
-  margin-right: 3.6rem;
+.nav-item {
+  font-size: 25px;
 }

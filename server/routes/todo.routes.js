@@ -1,50 +1,16 @@
-const router = require('express').Router();
-const { Todo } = require('../models');
+const router = require("express").Router();
+const booksController = require("../../config/serverControl");
 
-// restful api
-// /api/todo/
+// Matches with "/api/books"
+router.route("/")
+  .get(booksController.findAll)
+  .post(booksController.create);
+
+// Matches with "/api/books/:id"
 router
-  .route('/')
-  .get((req, res) => {
-    Todo
-      .find({})
-      .then(data => {
-        res.json({ success: true, data });
-      })
-      .catch(err => {
-        res.json({ success: false });
-      });
-  })
-  .post((req, res) => {
-    console.log({ reqBody: req.body });
-
-    Todo
-      .create({
-        text: req.body.text
-      })
-      .then(data => {
-        res.json({ success: true, data });
-      })
-      .catch(err => {
-        res.json({ success: false });
-      });
-  });
-
-
-// /api/todo/:id
-router
-  .route('/:id')
-  .delete((req, res) => {
-    console.log(req.params);
-
-    Todo
-      .findByIdAndDelete(req.params.id)
-      .then(data => {
-        res.json({ success: true });
-      })
-      .catch(err => {
-        res.json({ success: false });
-      });
-  });
+  .route("/:id")
+  .get(booksController.findById)
+  .put(booksController.update)
+  .delete(booksController.remove);
 
 module.exports = router;
